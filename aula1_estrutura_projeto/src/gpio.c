@@ -2,7 +2,7 @@
  * gpio.c
  *
  * Created: 27/02/2026 14:07:07
- *  Author: Aluno
+ *  Author: Ruan Victor Bonan
  */ 
 #include "gpio.h"
 #include <xc.h>

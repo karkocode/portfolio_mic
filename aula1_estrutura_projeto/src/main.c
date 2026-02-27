@@ -2,7 +2,7 @@
  * GccApplication2.cpp
  *
  * Created: 27/02/2026 13:46:23
- * Author : Aluno
+ * Author : Ruan Victor Bonan
  */ 
 
 #include <xc.h>

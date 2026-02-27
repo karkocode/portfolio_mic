@@ -2,13 +2,13 @@
  * usart.c
  *
  * Created: 27/02/2026 14:07:15
- *  Author: Aluno
+ *  Author: Ruan Victor Bonan
  */ 
 #include <xc.h>
 #include "usart.h"
 
 void USART_initialize () {
-	//CONFIGURAR O MÓDULO USART
+	//CONFIGURAR O Mï¿½DULO USART
 }
 
 void USART_send(){
