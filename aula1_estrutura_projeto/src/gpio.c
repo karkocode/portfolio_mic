@@ -4,6 +4,7 @@
  * Created: 27/02/2026 14:07:07
  *  Author: Ruan Victor Bonan
  */ 
+#define F_CPU 16000000
 #include "gpio.h"
 #include <xc.h>
 
@@ -13,4 +14,5 @@ void GPIO_initialize() {
 
 void GPIO_blinkled () {
 	PORTB = (1<<PORTB0); //aciona o pino PB0
+	PORTB &= ~(1<<PORTB0); //desaciona o pino PB0
 }
