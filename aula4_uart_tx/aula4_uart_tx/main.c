@@ -8,6 +8,7 @@
 #include <xc.h>
 #include "util/delay.h"
 
+// funçao printipal uart tx
 uint8_t gMessage[3] = {200, 100, 50}; //ultimo byte é checksum
 
 void UART_sendmessage(uint8_t * pData, int pSize) {
