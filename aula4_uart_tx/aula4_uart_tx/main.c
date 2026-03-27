@@ -9,7 +9,6 @@
 #include "util/delay.h"
 
 // funçao printipal uart tx
-uint8_t gMessage[3] = {200, 100, 50}; //ultimo byte é checksum
 
 void UART_sendmessage(uint8_t * pData, int pSize) {
 	uint8_t * tMsgPtr = pData;
@@ -34,8 +33,27 @@ int main(void)
 		|(1<<UPM01)|(0<<UPM00)				// HABILITA PARIDADE PAR
 		|(0<<USBS0)							// 1 BIT DE STOP
 		|(1<<UCSZ01)|(1<<UCSZ00);			// FRAMES DE 8 BITS
+		
 	while(1){
-		UART_sendmessage(gMessage, 3);
-		_delay_ms(10); 
+		if((PINB & (1<<PINB0)) == 0){
+			uint8_t tMessageOn[2] = {0x20, 0x01};
+			UART_sendmessage(tMessageOn, 2);
+			_delay_ms(10);
+		} else
+		if((PINB & (1<<PINB1)) == 0){
+			uint8_t tMessageOff[2] = {0x20, 0x00};
+			UART_sendmessage(tMessageOff, 2);
+			_delay_ms(10);
+		}
+		if((PINB & (1<<PINB2)) == 0){
+			uint8_t tMessageOn[2] = {0x30, 0x01};
+			UART_sendmessage(tMessageOn, 2);
+			_delay_ms(10);
+		} else
+		if((PINB & (1<<PINB3)) == 0){
+			uint8_t tMessageOff[2] = {0x30, 0x00};
+			UART_sendmessage(tMessageOff, 2);
+			_delay_ms(10);
+		}
 	}
 }
